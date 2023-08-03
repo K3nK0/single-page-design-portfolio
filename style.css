@@ -1,0 +1,110 @@
+:root {
+    --galactic-blue: #755CDE;
+    --summer-yellow: #F6A560;
+    --pink: #F39E9E;
+    --light-red: #EB7565;
+    --cyan: #61C4B7;
+    --bordeau: #552049;
+    --black: #030303;
+    --medium-brown: #7A746E;
+    --light-cream: #FFF7F0;
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background: var(--light-cream);
+}
+
+/* --------- HEADER / FOOTER---------*/
+
+header, footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: clamp(690px, 77.08vw, 1110px);
+    margin: 34px auto 66px;
+}
+
+.link-consultation-black {
+    position: relative;
+    padding: 14px 45px;
+    border-radius: 9999px;
+    color: var(--light-cream);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    text-decoration: none;
+    font-weight: 700;
+    line-height: 28px;
+    overflow: hidden;
+    z-index: 5;
+}
+.link-consultation-black::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--black);
+    transform-origin: left;
+    transition: transform .2s ease-out;
+    z-index: -1;
+}
+.link-consultation-black:hover::before {
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.link-consultation-black::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--galactic-blue);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .2s ease-out;
+    z-index: -1;
+}
+.link-consultation-black:hover::after {
+    transform: scaleX(100%);
+    transform-origin: left;
+}
+
+
+/* ----------- TABLET HEADER / FOOTER ----------- */
+
+@media (max-width: 768px) {
+    header, footer {
+        width: clamp(343px, 90vw, 690px);
+        margin: 34px auto 64px;
+    }
+}
+
+/* ----------- MOBILE HEADER / FOOTER ----------- */
+
+@media (max-width: 425px) {
+    header, footer {
+        width: 343px;
+        margin: 16px auto 32px;
+    }
+    .link-consultation-black {
+        padding: 8px 28px;
+        font-size: 14px;
+    }
+    #logo {
+        width: 48px;
+        height: 48px;
+    }
+}

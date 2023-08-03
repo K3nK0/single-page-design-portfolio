@@ -108,3 +108,64 @@ header, footer {
         height: 48px;
     }
 }
+
+/* ---------------- SECTION TITLE ---------------- */
+
+.title {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.title h1 {
+    margin-bottom: 23px;
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.title p {
+    max-width: 730px;
+    margin: 0 auto;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+    color: var(--medium-brown);
+}
+
+
+/* ------------ TABLET SECTION TITLE ------------ */
+
+@media (max-width: 1110px) {
+    .title {
+        margin-bottom: 64px;
+    }
+
+    .title h1 {
+        margin-bottom: 27px;
+        font-size: 44px;
+    }
+    
+    .title p {
+        max-width: 573px;
+        font-size: 18px;
+    }
+}
+
+/* ------------ MOBILE SECTION TITLE ------------ */
+
+@media (max-width:650px) {
+    .title {
+        margin-bottom: 32px;
+        padding: 0 40px;
+    }
+    
+    .title h1 {
+        margin-bottom: 16px;
+        font-size: 36px;
+    }
+    
+    .title p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+}

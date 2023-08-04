@@ -472,3 +472,61 @@ footer .link-consultation::after {
     width: 100%;
     padding: 0 15px;
 }
+
+.btns-slider {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.btn-slider {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.btn-slider::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: var(--black);
+    transition: transform .2s ease-out;
+    z-index: -1;
+}
+
+.btn-slider::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: var(--galactic-blue);
+    transition: transform .2s ease-out;
+    z-index: -1;
+}
+
+.btn-previous::after {
+    transform: scaleX(0);
+    transform-origin: left;
+}
+.btn-previous:hover::after {
+    transform-origin: right;
+    transform: scaleX(1);
+}
+.btn-next::after {
+    transform: scaleX(0);
+    transform-origin: right;
+}
+.btn-next:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}

@@ -11,9 +11,16 @@ const discoverMyWork = [
     document.querySelector('.btns-slider')
 ]
 
+const discoverConsultation = [
+    document.querySelector('.consultation'),
+    document.querySelector('.left-consultation h2'),
+    document.querySelector('.left-consultation p')
+]
+
 const animatedContents = [
     ...discoverProfile,
-    ...discoverMyWork
+    ...discoverMyWork,
+    ...discoverConsultation
 ]
 
 const intersectionObserver = new IntersectionObserver(handleIntersect, {rootMargin: "-20%"});

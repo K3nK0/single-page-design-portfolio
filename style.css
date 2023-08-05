@@ -26,7 +26,7 @@ body {
     overflow-x: hidden;
 }
 
-header, footer, .patterns, .profile {
+header, footer, .patterns, .profile, .consultation {
     width: clamp(690px, 77.08vw, 1110px);
 }
 
@@ -454,7 +454,8 @@ footer .link-consultation::after {
 
 .slide {
     width: 100%;
-    padding: 0 15px;
+    padding: 15px 15px;
+    border-radius: 25px;
 }
 
 .btns-slider {
@@ -512,7 +513,7 @@ footer .link-consultation::after {
     transform: scaleX(1);
 }
 
-/* ------------ TABLET SECTION PROFILE ------------ */
+/* ------------ TABLET SECTION MY WORK ------------ */
 
 @media (max-width: 1110px) {
     .my-work {
@@ -537,10 +538,87 @@ footer .link-consultation::after {
     }
 }
 
+/* ---------------- SECTION CONSULTATION ---------------- */
+
+.consultation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 65px;
+    background: var(--black);
+    margin: 0 auto 56px;
+    border-radius: 10px;
+}
+
+.left-consultation {
+    color: var(--light-cream);
+    max-width: 540px;
+}
+
+.left-consultation h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.left-consultation p {
+    font-size: 18px;
+    line-height: 28px;
+}
 
 
+.consultation .link-consultation::before {
+    background: var(--light-red);
+}
 
+.consultation .link-consultation::after {
+    background: var(--summer-yellow);
+}
 
+/* ------------ TABLET SECTION CONSULTATION ------------ */
+
+@media (max-width: 1200px) {
+    .consultation {
+        padding: 70px 45px;
+    }
+    .left-consultation {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 1110px) {
+    .consultation {
+        width: clamp(343px, 90vw, 690px);
+        margin: 0 auto 120px;
+        flex-direction: column;
+        text-align: center;
+        padding: 56px 75px;
+        gap: 26px;
+    }
+    .left-consultation {
+        max-width: none;
+    }
+    .left-consultation h2 {
+        font-size: 32px;
+        margin-bottom: 26px;
+    }
+}
+
+@media (max-width: 560px) {
+    .consultation {
+        margin: 0 auto 40px;
+        padding: 50px 24px;
+        gap: 24px;
+    }
+    .left-consultation h2 {
+        font-size: 26px;
+        margin-bottom: 24px;
+    }
+    .left-consultation p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+}
 
 /* animation */
 
@@ -550,7 +628,10 @@ footer .link-consultation::after {
 .container-presentation .link-consultation,
 .my-work h3,
 .slider,
-.btns-slider {
+.btns-slider,
+.consultation,
+.left-consultation h2,
+.left-consultation p {
     opacity: 0;
     transform: scaleY(0);
     transform-origin: top;
@@ -564,7 +645,10 @@ footer .link-consultation::after {
 .container-presentation .link-consultation.active,
 .my-work h3.active,
 .slider.active,
-.btns-slider.active {
+.btns-slider.active,
+.consultation.active,
+.left-consultation h2.active,
+.left-consultation p.active {
     opacity: 1;
     transform: scaleY(1);
 }

@@ -9,3 +9,8 @@ $('.slider').slick({
     variableWidth: true,
     accessibility: true
   });
+
+$('.btn-slider').click(function() {
+  let slid = $(this).data('slide');
+  $('.slider').slick(slid)
+})

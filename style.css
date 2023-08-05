@@ -346,26 +346,6 @@ footer .link-consultation::after {
     background: var(--summer-yellow);
 }
 
-/* animation */
-
-.container-photo-profile img,
-.container-presentation h2,
-.container-presentation p,
-.container-presentation .link-consultation {
-    opacity: 0;
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: opacity 1s ease-out,
-    transform 1s ease-out;
-}
-
-.container-photo-profile img.active,
-.container-presentation h2.active,
-.container-presentation p.active,
-.container-presentation .link-consultation.active {
-    opacity: 1;
-    transform: scaleY(1);
-}
 
 /* ------------ TABLET SECTION PROFILE ------------ */
 
@@ -453,6 +433,10 @@ footer .link-consultation::after {
 
 /* -------------- SECTION MY WORK -------------- */
 
+.my-work {
+    margin-bottom: 88px;
+}
+
 
 .my-work h3 {
     text-align: center;
@@ -490,28 +474,25 @@ footer .link-consultation::after {
     overflow: hidden;
 }
 
-.btn-slider::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: var(--black);
-    transition: transform .2s ease-out;
-    z-index: -1;
-}
-
+.btn-slider::before,
 .btn-slider::after {
     content: "";
     position: absolute;
     height: 100%;
     width: 100%;
+    border-radius: 50%;
     top: 0;
     left: 0;
-    background: var(--galactic-blue);
     transition: transform .2s ease-out;
     z-index: -1;
+}
+
+.btn-slider::before {
+    background: var(--black);
+}
+
+.btn-slider::after {
+    background: var(--galactic-blue);
 }
 
 .btn-previous::after {
@@ -529,4 +510,61 @@ footer .link-consultation::after {
 .btn-next:hover::after {
     transform-origin: left;
     transform: scaleX(1);
+}
+
+/* ------------ TABLET SECTION PROFILE ------------ */
+
+@media (max-width: 1110px) {
+    .my-work {
+        margin-bottom: 120px;
+    }
+}
+
+@media (max-width:560px) {
+    .my-work {
+        margin-bottom: 100px;
+    }
+    .my-work h3 {
+        margin-bottom: 32px;
+    }
+    .slider {
+        margin-bottom: 32px;
+        height: 180px;
+    }
+    .slide {
+        height: 180px;
+        padding: 0 15px;
+    }
+}
+
+
+
+
+
+
+/* animation */
+
+.container-photo-profile img,
+.container-presentation h2,
+.container-presentation p,
+.container-presentation .link-consultation,
+.my-work h3,
+.slider,
+.btns-slider {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: opacity 1s ease-out,
+    transform 1s ease-out;
+}
+
+.container-photo-profile img.active,
+.container-presentation h2.active,
+.container-presentation p.active,
+.container-presentation .link-consultation.active,
+.my-work h3.active,
+.slider.active,
+.btns-slider.active {
+    opacity: 1;
+    transform: scaleY(1);
 }
